@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.version       = GithubEventsExport::VERSION
   spec.authors       = ['Gareth Rees']
   spec.email         = ['gareth@garethrees.co.uk']
+  spec.license       = 'MIT'
 
   spec.summary       = 'Export GitHub events to JSON files'
   spec.homepage      = 'https://github.com/garethrees/github_events_export'
