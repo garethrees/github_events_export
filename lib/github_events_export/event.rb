@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'digest'
+
 module GithubEventsExport
   # Wrapper around a GitHub Event
   # https://developer.github.com/v3/activity/events
@@ -13,12 +15,27 @@ module GithubEventsExport
     end
 
     def save
+      save! if changed?
+    end
+
+    def save!
       File.write(filename, to_json)
     end
 
     private
 
     attr_reader :event_data
+
+    def changed?
+      return true unless persisted?
+
+      Digest::MD5.hexdigest(to_json) !=
+        Digest::MD5.hexdigest(File.read(filename))
+    end
+
+    def persisted?
+      File.exist?(filename)
+    end
 
     def filename
       "#{event_data.id}.json"
