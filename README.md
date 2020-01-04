@@ -11,7 +11,25 @@ performed by you to individual JSON files in the current working directory.
 
     mkdir -p ~/backups/github/events
     cd ~/backups/github/events
+
     github_events_export --token=YOUR_GITHUB_TOKEN
+
+    ls -1 | head -n 3
+    10789243348.json
+    10789514477.json
+    10791070051.json
+
+    cat 10789243348.json | jq | head
+    {
+      "id": "10789243348",
+      "type": "PullRequestEvent",
+      "actor": {
+        "id": 282788,
+        "login": "garethrees",
+        "display_login": "garethrees",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/garethrees",
+        "avatar_url": "https://avatars.githubusercontent.com/u/282788?"
 
 ## Development
 
