@@ -17,7 +17,7 @@ GEM
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
     public_suffix (4.0.2)
-    rake (10.5.0)
+    rake (13.0.1)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -41,7 +41,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2.0)
   github_events_export!
-  rake (~> 10.0)
+  rake (~> 13.0)
   rspec (~> 3.0)
 
 BUNDLED WITH
